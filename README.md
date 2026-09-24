@@ -20,7 +20,10 @@ The PNG above is the actual output of the published T2I workflow and contains it
 
 The browser screenshot below shows the T2I multi-queue workflow loaded in ComfyUI. The queue count is set to `4`; each queued run is processed sequentially with a newly randomized seed.
 
-<!-- T2I_UI_SCREENSHOT -->
+<img width="1536" height="720" alt="ComfyUI T2I multi-queue workflow in browser" src="https://github.com/user-attachments/assets/7a2b40c1-1def-4345-8239-be22258d5d19" />
+
+
+
 
 ### T2I作例について
 
