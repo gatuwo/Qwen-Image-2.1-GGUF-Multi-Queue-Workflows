@@ -22,14 +22,48 @@ The browser screenshot below shows the T2I multi-queue workflow loaded in ComfyU
 
 <img width="1536" height="720" alt="ComfyUI T2I multi-queue workflow in browser" src="https://github.com/user-attachments/assets/7a2b40c1-1def-4345-8239-be22258d5d19" />
 
-
-
-
 ### T2I作例について
 
 上のPNGは、公開しているT2Iワークフローで実際に生成した画像です。ComfyUIのワークフローメタデータも埋め込まれています。画像内の生成プロンプトと、公開JSONの初期プロンプトが一致することを確認済みです。
 
 ブラウザ画面ではキュー回数を`4`に設定しています。4枚を同時処理するのではなく、Seedを毎回ランダム化しながら1枚ずつ順番に生成します。
+
+## I2I example
+
+![I2I generated image and embedded workflow](previews/Qwen-Image-2.1-I2I-Workflow-Share.png)
+
+The PNG above is the last image generated during the multi-queue I2I test. It contains embedded ComfyUI `workflow` and `prompt` metadata and can be dragged onto the ComfyUI canvas. The test used image 1 for the woman and background, while image 2 supplied only the pose.
+
+![ComfyUI I2I multi-queue workflow in browser](previews/Qwen-Image-2.1-I2I-Workflow-Screenshot.png)
+
+The screenshot shows two `Load Image` nodes connected to the I2I workflow, with a queue count of `2`. Each execution uses a newly randomized seed and runs sequentially.
+
+### I2I作例について
+
+上のPNGは、I2Iマルチキューのテストで最後に生成した画像です。ComfyUIの`workflow`と`prompt`メタデータが埋め込まれており、ComfyUIのキャンバスへドラッグ＆ドロップできます。
+
+このテストでは、`image_1`から女性・制服・背景・写実的な画風を参照し、`image_2`からは全身ポーズと手足の配置だけを参照しています。説明用スクリーンショットではキュー回数を`2`に設定しています。各生成は異なるSeedで1枚ずつ順番に実行されます。
+
+今回の作例に埋め込まれたプロンプト：
+
+```text
+<image1>をメイン画像として使用してください。
+
+人物の顔立ち、髪型、髪色、表情、体型、制服、靴、配色、写実的な画風を、すべて<image1>に忠実に維持してください。
+屋外の学校施設、植木、青空、日差しなどの背景と雰囲気も、<image1>を維持してください。
+
+<image2>からは、人物の全身ポーズと手足の配置だけを参考にしてください。
+<image2>の人物の顔、髪型、衣装、体型、背景、色、画風は使用しないでください。
+
+<image1>の女性を、<image2>と同じポーズに変更してください。
+片腕を顔の近くで曲げて、手指でフレームを作る。
+もう一方の手も胸元でフレームを作る。
+両脚を左右に開き、片膝を軽く曲げた、明るく活動的な全身ポーズ。
+人物の頭から靴までが画面内に収まる縦長構図。
+
+自然で高品質な写実的写真。
+顔、手指、腕、脚の形を自然に描写し、<image1>の人物・制服・背景の一貫性を保ってください。
+```
 
 ## Features
 
