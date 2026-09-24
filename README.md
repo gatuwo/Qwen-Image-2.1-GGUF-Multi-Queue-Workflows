@@ -6,7 +6,27 @@ These workflows were tested on an NVIDIA GeForce RTX 4060 Laptop GPU with 8 GB V
 
 日本語の説明は[こちら](#日本語)です。
 
-![I2I preview](previews/Qwen-Image-2.1-I2I-Workflow-Share.png)
+## T2I example
+
+![T2I generated image and embedded workflow](previews/Qwen-Image-2.1-T2I-Workflow-Share.png)
+
+The PNG above is the actual output of the published T2I workflow and contains its ComfyUI workflow metadata. Its embedded generation prompt is identical to the default prompt in `Qwen-Image-2.1-T2I-GGUF-Multi-Queue.json`:
+
+```text
+日本のアニメスタイル。
+公園の噴水の前でショートワンピースを着て立っている一人の女の子。
+笑顔で手を振っている。天気は快晴。
+```
+
+The browser screenshot below shows the T2I multi-queue workflow loaded in ComfyUI. The queue count is set to `4`; each queued run is processed sequentially with a newly randomized seed.
+
+<!-- T2I_UI_SCREENSHOT -->
+
+### T2I作例について
+
+上のPNGは、公開しているT2Iワークフローで実際に生成した画像です。ComfyUIのワークフローメタデータも埋め込まれています。画像内の生成プロンプトと、公開JSONの初期プロンプトが一致することを確認済みです。
+
+ブラウザ画面ではキュー回数を`4`に設定しています。4枚を同時処理するのではなく、Seedを毎回ランダム化しながら1枚ずつ順番に生成します。
 
 ## Features
 
